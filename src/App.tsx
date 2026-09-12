@@ -94,6 +94,7 @@ function App() {
       </section>
 
       <section className="poster section">
+        <img className="poster-skull" src={bullSkull} alt="" aria-hidden="true" />
         <div className="poster-type">STRAPPED</div>
         <p>VINTAGE / WESTERN / SECONDHAND</p>
       </section>
