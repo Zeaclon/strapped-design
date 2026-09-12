@@ -7,12 +7,22 @@ const instagram = 'https://www.instagram.com/strappedvintage.co'
 
 function SkullMark({ small = false }: { small?: boolean }) {
   return (
-    <svg className={small ? 'skull skull--small' : 'skull'} viewBox="0 0 180 150" aria-hidden="true">
-      <path d="M90 12C48 12 19 40 19 76c0 24 13 42 32 51v16h18v-12h13v12h16v-12h13v12h18v-16c19-9 32-27 32-51 0-36-29-64-71-64Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M24 57 5 47M25 67 3 66M156 57l19-10M155 67l22-1" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <path d="M57 66c9-9 20-9 29 0M94 66c9-9 20-9 29 0M68 100c15 8 29 8 44 0M79 82l-3 17h28l-3-17" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="58" cy="72" r="7" fill="currentColor" />
-      <circle cx="122" cy="72" r="7" fill="currentColor" />
+    <svg className={small ? 'skull skull--small' : 'skull'} viewBox="0 0 260 220" aria-hidden="true">
+      {/* Proper longhorn/bull skull silhouette: heavy black stencil with tall upturned horns. */}
+      <path
+        className="skull-fill"
+        d="M130 48C105 48 82 58 70 76C58 94 59 120 69 137C78 151 91 160 105 166L103 199H121L126 178H134L139 199H157L155 166C169 160 182 151 191 137C201 120 202 94 190 76C178 58 155 48 130 48Z"
+      />
+      <path
+        className="skull-horns"
+        d="M77 104C54 101 35 88 28 67C22 49 25 27 39 12C32 32 35 48 46 58C55 66 67 68 82 65M183 104C206 101 225 88 232 67C238 49 235 27 221 12C228 32 225 48 214 58C205 66 193 68 178 65"
+      />
+      <path className="skull-cut" d="M87 94C99 82 114 83 125 95L116 119C103 124 91 120 85 110Z" />
+      <path className="skull-cut" d="M173 94C161 82 146 83 135 95L144 119C157 124 169 120 175 110Z" />
+      <path className="skull-cut" d="M117 128L130 113L143 128L139 158H121Z" />
+      <path className="skull-cut" d="M103 151L112 145L116 166L106 174Z" />
+      <path className="skull-cut" d="M157 151L148 145L144 166L154 174Z" />
+      <path className="skull-line" d="M93 78C105 69 116 66 130 66C144 66 155 69 167 78M99 137C108 145 119 149 130 149C141 149 152 145 161 137" />
     </svg>
   )
 }
@@ -20,9 +30,9 @@ function SkullMark({ small = false }: { small?: boolean }) {
 function App() {
   const heroRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
-  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '28%'])
-  const skullY = useTransform(scrollYProgress, [0, 1], ['0%', '-35%'])
-  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
+  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
+  const skullY = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.06])
 
   return (
     <main>
@@ -106,7 +116,7 @@ function App() {
       <section className="poster section">
         <motion.div
           className="poster-skull"
-          animate={{ rotate: [0, 2, -2, 0] }}
+          animate={{ rotate: [0, 1, -1, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         ><SkullMark /></motion.div>
         <div className="poster-type">STRAPPED</div>
