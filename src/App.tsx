@@ -82,6 +82,7 @@ function App() {
       <section className="split-story">
         <div className="split-photo" />
         <div className="split-copy">
+          <img className="split-skull" src={bullSkull} alt="" aria-hidden="true" />
           <div className="section-label">03 / FIND YOURS</div>
           <h2>THE RACK<br /><i>IS MOVING.</i></h2>
           <p>New finds don't wait around. Browse the current selection online, or follow along for the next drop and market appearance.</p>
