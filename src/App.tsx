@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import bullSkull from './assets/bull-skull.svg'
 
 const depop = 'https://www.depop.com/strappedvintage_co/'
 const ebay = 'https://www.ebay.com.au/usr/strappedv_39'
@@ -10,6 +11,7 @@ function App() {
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.06])
+  const skullY = useTransform(scrollYProgress, [0, 1], ['0%', '-10%'])
 
   return (
     <main>
@@ -26,6 +28,7 @@ function App() {
       <section ref={heroRef} id="top" className="hero">
         <motion.div className="hero-photo" style={{ y: heroY, scale: heroScale }} />
         <div className="hero-wash" />
+        <motion.img className="hero-skull" src={bullSkull} alt="Detailed bull skull with upturned horns" style={{ y: skullY }} />
         <div className="hero-copy">
           <p className="eyebrow">VINTAGE CLOTHING · COWBOY BOOTS · WESTERN WEAR</p>
           <h1><span>STRAPPED</span><em>VINTAGE</em></h1>
