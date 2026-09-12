@@ -73,7 +73,9 @@ a { color: inherit; text-decoration: none; }
 
 .split-story { display: grid; grid-template-columns: 1.05fr .95fr; min-height: 760px; background: var(--dark); color: #f2e3c2; }
 .split-photo { min-height: 650px; background: url('https://images.unsplash.com/photo-1506629905607-d9c297d3e6e2?auto=format&fit=crop&w=1500&q=85') center/cover; filter: sepia(.6) saturate(.58) contrast(1.1); }
-.split-copy { padding: 10vw 8vw; display: flex; flex-direction: column; justify-content: center; }
+.split-copy { position: relative; padding: 10vw 8vw; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+.split-skull { position: relative; z-index: 0; display: block; width: min(100%, 380px); height: auto; margin: 0 auto 38px; opacity: .92; filter: brightness(0) saturate(100%) invert(91%) sepia(7%) saturate(450%) hue-rotate(357deg) brightness(102%) contrast(92%); pointer-events: none; }
+.split-copy > .section-label, .split-copy > h2, .split-copy > p, .split-copy > .actions { position: relative; z-index: 1; }
 .split-copy h2 { font-family: 'Rye', serif; font-size: clamp(70px, 10vw, 155px); line-height: .78; font-weight: 400; margin: 70px 0 45px; }
 .split-copy p { max-width: 470px; font-family: 'Libre Baskerville', serif; font-size: 16px; line-height: 1.85; }
 .actions { display: flex; gap: 12px; margin-top: 35px; }
@@ -115,6 +117,7 @@ a { color: inherit; text-decoration: none; }
   .section-heading p { margin-top: 22px; }
   .split-photo { min-height: 80vw; }
   .split-copy { padding: 80px 7vw; }
+  .split-skull { width: min(100%, 320px); margin-bottom: 32px; }
   .poster { min-height: 540px; }
   .footer-skull { width: 125vw; bottom: -17%; opacity: .13; }
   .footer-top { min-height: 300px; display: block; }
