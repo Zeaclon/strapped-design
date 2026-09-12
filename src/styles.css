@@ -87,7 +87,8 @@ a { color: inherit; text-decoration: none; }
 .poster { min-height: 680px; position: relative; overflow: hidden; background: var(--rust); color: #f2e3c2; display: grid; place-items: center; text-align: center; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
 .poster::before, .poster::after { content: ''; position: absolute; border: 2px solid rgba(242,227,194,.5); inset: 28px; pointer-events: none; }
 .poster::after { inset: 42px; border-style: dashed; opacity: .7; }
-.poster-type { position: absolute; font-family: 'Rye', serif; font-size: clamp(105px, 21vw, 325px); line-height: .7; letter-spacing: .01em; opacity: .16; }
+.poster-skull { position: relative; z-index: 1; display: block; width: min(42vw, 520px); height: auto; margin: 0 auto; opacity: .95; filter: brightness(0) saturate(100%) invert(91%) sepia(7%) saturate(450%) hue-rotate(357deg) brightness(102%) contrast(92%); pointer-events: none; }
+.poster-type { position: absolute; z-index: 0; font-family: 'Rye', serif; font-size: clamp(105px, 21vw, 325px); line-height: .7; letter-spacing: .01em; opacity: .16; }
 .poster > p { position: absolute; bottom: 58px; font-size: 9px; letter-spacing: .2em; }
 
 .footer { position: relative; overflow: hidden; background: var(--dark); color: #f2e3c2; padding: 70px 28px 22px; }
@@ -118,6 +119,7 @@ a { color: inherit; text-decoration: none; }
   .split-copy { padding: 80px 7vw; }
   .split-skull { width: min(100%, 320px); margin-bottom: 32px; }
   .poster { min-height: 540px; }
+  .poster-skull { width: min(78vw, 420px); }
   .footer-top { min-height: 300px; display: block; }
   .footer-links { align-items: flex-start; margin-top: 70px; }
   .footer-bottom { gap: 25px; flex-direction: column; }
