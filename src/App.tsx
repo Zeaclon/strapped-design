@@ -5,29 +5,10 @@ const depop = 'https://www.depop.com/strappedvintage_co/'
 const ebay = 'https://www.ebay.com.au/usr/strappedv_39'
 const instagram = 'https://www.instagram.com/strappedvintage.co'
 
-function SkullMark({ small = false }: { small?: boolean }) {
-  return (
-    <svg className={small ? 'skull skull--small' : 'skull'} viewBox="0 0 320 260" aria-hidden="true">
-      {/* Anatomical longhorn bull skull: symmetrical, elongated, upturned horns, stark stencil treatment. */}
-      <g className="skull-art">
-        <path className="skull-horns" d="M91 125C65 124 39 116 24 97C10 79 8 53 17 29C21 18 28 9 38 2C30 17 30 33 38 46C49 63 66 70 99 67M229 125C255 124 281 116 296 97C310 79 312 53 303 29C299 18 292 9 282 2C290 17 290 33 282 46C271 63 254 70 221 67" />
-        <path className="skull-fill" d="M160 49C128 49 102 61 89 82C76 102 78 132 89 151C98 166 111 176 127 184L123 228L143 228L150 199H170L177 228H197L193 184C209 176 222 166 231 151C242 132 244 102 231 82C218 61 192 49 160 49Z" />
-        <path className="skull-cut" d="M111 96C123 82 143 79 155 94L146 126C132 131 118 126 109 114Z" />
-        <path className="skull-cut" d="M209 96C197 82 177 79 165 94L174 126C188 131 202 126 211 114Z" />
-        <path className="skull-cut" d="M147 136L160 120L173 136L168 174H152Z" />
-        <path className="skull-cut" d="M126 166L141 158L146 191L129 199Z" />
-        <path className="skull-cut" d="M194 166L179 158L174 191L191 199Z" />
-        <path className="skull-line" d="M103 78C121 64 139 60 160 60C181 60 199 64 217 78M116 143C128 154 143 160 160 160C177 160 192 154 204 143M136 184L133 214M184 184L187 214" />
-      </g>
-    </svg>
-  )
-}
-
 function App() {
   const heroRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
-  const skullY = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.06])
 
   return (
@@ -45,7 +26,6 @@ function App() {
       <section ref={heroRef} id="top" className="hero">
         <motion.div className="hero-photo" style={{ y: heroY, scale: heroScale }} />
         <div className="hero-wash" />
-        <motion.div className="hero-skull" style={{ y: skullY }}><SkullMark /></motion.div>
         <div className="hero-copy">
           <p className="eyebrow">VINTAGE CLOTHING · COWBOY BOOTS · WESTERN WEAR</p>
           <h1><span>STRAPPED</span><em>VINTAGE</em></h1>
@@ -110,21 +90,13 @@ function App() {
       </section>
 
       <section className="poster section">
-        <motion.div
-          className="poster-skull"
-          animate={{ rotate: [0, 1, -1, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        ><SkullMark /></motion.div>
         <div className="poster-type">STRAPPED</div>
         <p>VINTAGE / WESTERN / SECONDHAND</p>
       </section>
 
       <footer className="footer">
         <div className="footer-top">
-          <div>
-            <SkullMark small />
-            <div className="footer-word">STRAPPED</div>
-          </div>
+          <div className="footer-word">STRAPPED</div>
           <div className="footer-links">
             <a href={depop} target="_blank" rel="noreferrer">Depop ↗</a>
             <a href={ebay} target="_blank" rel="noreferrer">eBay ↗</a>
