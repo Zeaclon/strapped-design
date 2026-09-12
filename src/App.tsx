@@ -99,7 +99,6 @@ function App() {
       </section>
 
       <footer className="footer">
-        <motion.img className="footer-skull" src={bullSkull} alt="" aria-hidden="true" style={{ y: skullY }} />
         <div className="footer-top">
           <div className="footer-word">STRAPPED</div>
           <div className="footer-links">
