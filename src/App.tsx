@@ -7,22 +7,18 @@ const instagram = 'https://www.instagram.com/strappedvintage.co'
 
 function SkullMark({ small = false }: { small?: boolean }) {
   return (
-    <svg className={small ? 'skull skull--small' : 'skull'} viewBox="0 0 260 220" aria-hidden="true">
-      {/* Proper longhorn/bull skull silhouette: heavy black stencil with tall upturned horns. */}
-      <path
-        className="skull-fill"
-        d="M130 48C105 48 82 58 70 76C58 94 59 120 69 137C78 151 91 160 105 166L103 199H121L126 178H134L139 199H157L155 166C169 160 182 151 191 137C201 120 202 94 190 76C178 58 155 48 130 48Z"
-      />
-      <path
-        className="skull-horns"
-        d="M77 104C54 101 35 88 28 67C22 49 25 27 39 12C32 32 35 48 46 58C55 66 67 68 82 65M183 104C206 101 225 88 232 67C238 49 235 27 221 12C228 32 225 48 214 58C205 66 193 68 178 65"
-      />
-      <path className="skull-cut" d="M87 94C99 82 114 83 125 95L116 119C103 124 91 120 85 110Z" />
-      <path className="skull-cut" d="M173 94C161 82 146 83 135 95L144 119C157 124 169 120 175 110Z" />
-      <path className="skull-cut" d="M117 128L130 113L143 128L139 158H121Z" />
-      <path className="skull-cut" d="M103 151L112 145L116 166L106 174Z" />
-      <path className="skull-cut" d="M157 151L148 145L144 166L154 174Z" />
-      <path className="skull-line" d="M93 78C105 69 116 66 130 66C144 66 155 69 167 78M99 137C108 145 119 149 130 149C141 149 152 145 161 137" />
+    <svg className={small ? 'skull skull--small' : 'skull'} viewBox="0 0 320 260" aria-hidden="true">
+      {/* Anatomical longhorn bull skull: symmetrical, elongated, upturned horns, stark stencil treatment. */}
+      <g className="skull-art">
+        <path className="skull-horns" d="M91 125C65 124 39 116 24 97C10 79 8 53 17 29C21 18 28 9 38 2C30 17 30 33 38 46C49 63 66 70 99 67M229 125C255 124 281 116 296 97C310 79 312 53 303 29C299 18 292 9 282 2C290 17 290 33 282 46C271 63 254 70 221 67" />
+        <path className="skull-fill" d="M160 49C128 49 102 61 89 82C76 102 78 132 89 151C98 166 111 176 127 184L123 228L143 228L150 199H170L177 228H197L193 184C209 176 222 166 231 151C242 132 244 102 231 82C218 61 192 49 160 49Z" />
+        <path className="skull-cut" d="M111 96C123 82 143 79 155 94L146 126C132 131 118 126 109 114Z" />
+        <path className="skull-cut" d="M209 96C197 82 177 79 165 94L174 126C188 131 202 126 211 114Z" />
+        <path className="skull-cut" d="M147 136L160 120L173 136L168 174H152Z" />
+        <path className="skull-cut" d="M126 166L141 158L146 191L129 199Z" />
+        <path className="skull-cut" d="M194 166L179 158L174 191L191 199Z" />
+        <path className="skull-line" d="M103 78C121 64 139 60 160 60C181 60 199 64 217 78M116 143C128 154 143 160 160 160C177 160 192 154 204 143M136 184L133 214M184 184L187 214" />
+      </g>
     </svg>
   )
 }
