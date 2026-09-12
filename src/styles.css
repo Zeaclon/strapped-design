@@ -42,13 +42,6 @@ a { color: inherit; text-decoration: none; }
 .hero h1 { margin: 18px 0 0; font-family: 'Rye', serif; font-size: clamp(84px, 16vw, 235px); line-height: .78; letter-spacing: -.02em; display: flex; flex-direction: column; text-shadow: 4px 5px 0 rgba(23,16,11,.55); }
 .hero h1 em { font-family: 'Libre Baskerville', serif; font-size: .23em; font-weight: 400; font-style: italic; letter-spacing: .05em; margin: 24px 0 0 9vw; text-shadow: none; }
 .hero-intro { margin: 42px 0 0 9vw; font-family: 'Libre Baskerville', serif; font-style: italic; font-size: clamp(17px, 1.9vw, 25px); }
-.hero-skull { position: absolute; z-index: 1; right: 7vw; top: 15%; color: #f2e3c2; width: min(30vw, 390px); mix-blend-mode: screen; opacity: .9; }
-.skull { width: 100%; height: auto; }
-.skull-fill { fill: currentColor; }
-.skull-horns { fill: none; stroke: currentColor; stroke-width: 9; stroke-linecap: square; stroke-linejoin: round; }
-.skull-cut { fill: var(--dark); }
-.skull-line { fill: none; stroke: var(--dark); stroke-width: 4; stroke-linecap: square; }
-.skull--small { width: 100px; }
 .hero-bottom { position: absolute; z-index: 3; left: 28px; right: 28px; bottom: 22px; display: flex; justify-content: space-between; font-size: 8px; letter-spacing: .16em; }
 
 .ticker { display: flex; gap: 30px; align-items: center; overflow: hidden; white-space: nowrap; padding: 13px 0; background: var(--rust-dark); color: #f2e3c2; font-size: 9px; letter-spacing: .17em; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
@@ -91,8 +84,6 @@ a { color: inherit; text-decoration: none; }
 .poster { min-height: 680px; position: relative; overflow: hidden; background: var(--rust); color: #f2e3c2; display: grid; place-items: center; text-align: center; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
 .poster::before, .poster::after { content: ''; position: absolute; border: 2px solid rgba(242,227,194,.5); inset: 28px; pointer-events: none; }
 .poster::after { inset: 42px; border-style: dashed; opacity: .7; }
-.poster-skull { width: min(34vw, 420px); z-index: 2; }
-.poster-skull .skull-cut, .poster-skull .skull-line { fill: var(--rust); stroke: var(--rust); }
 .poster-type { position: absolute; font-family: 'Rye', serif; font-size: clamp(105px, 21vw, 325px); line-height: .7; letter-spacing: .01em; opacity: .16; }
 .poster > p { position: absolute; bottom: 58px; font-size: 9px; letter-spacing: .2em; }
 
@@ -108,7 +99,6 @@ a { color: inherit; text-decoration: none; }
   .nav-shop { font-size: 8px; }
   .hero-copy { width: calc(100% - 36px); margin-bottom: 14vh; }
   .hero h1 { font-size: clamp(68px, 21vw, 135px); }
-  .hero-skull { right: -5vw; top: 18%; width: 50vw; opacity: .75; }
   .hero-bottom { left: 18px; right: 18px; }
   .hero-bottom span:first-child { max-width: 180px; }
   .section { padding: 85px 6vw; }
@@ -122,7 +112,6 @@ a { color: inherit; text-decoration: none; }
   .split-photo { min-height: 80vw; }
   .split-copy { padding: 80px 7vw; }
   .poster { min-height: 540px; }
-  .poster-skull { width: 58vw; }
   .footer-top { min-height: 300px; display: block; }
   .footer-links { align-items: flex-start; margin-top: 70px; }
   .footer-bottom { gap: 25px; flex-direction: column; }
